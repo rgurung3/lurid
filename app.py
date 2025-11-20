@@ -1,7 +1,6 @@
-from flask import Flask, render_template
-# from slm import infer,init_model
+from flask import Flask, render_template, request
 
-app=Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def index():
@@ -9,15 +8,17 @@ def index():
 
 @app.route('/talk')
 def talk():
-    return render_template('talk.html',message=None)
+    return render_template('talk.html', show_stressors=False)
 
-# @app.route('send_message')
-# def send_message(message,prompt_template_path):
-#     #infer here
-#     generator='text'
-#     inference=infer(message,generator,prompt_template_path)
-#     return render_template('talk',message=inference)
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    # get the text from the textarea
+    message = request.form.get("message", "")
+    chart_data = {
+        
+    }
+    return render_template("results.html", show_stressors=True)
 
-if __name__=='__main__':
-    # generator=init_model()
+
+if __name__ == '__main__':
     app.run(debug=True)
