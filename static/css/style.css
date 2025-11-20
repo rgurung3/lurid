@@ -1,12 +1,12 @@
 /* global*/
 body{
   font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Roboto;
   margin:0;
   color:#a87b9e;
   text-align: center;
   align-items: center;
 }
-
 .hero {
   position: relative;
   overflow: hidden;
@@ -531,7 +531,6 @@ Adding this for the results page
     background: #ffe6fa;
     color: #8d3b85;
 }
-
 
 /* .glass::before,
 .glass::after{
